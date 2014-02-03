@@ -7,7 +7,7 @@ library(MortalitySmooth)
 
 #ex1 denmark males 20th century
 
-dnk <- hmd.mx("DNK",username,password, "Denmark")   
+dnk <- hmd.mx("DNK","username","password", "Denmark")   
 dnk.ex1 <- extract.ages(extract.years(dnk,1900:1999), 0:95)
 dnk.ex1 #check
 plot(dnk.ex1,'male')
@@ -36,7 +36,7 @@ legend("topleft",lty=1:2, legend=c("CDE smoothing", "HU smoothing"))
 
 #ex3 canada total
 
-can <- hmd.mx("CAN",username,password, "Canada")
+can <- hmd.mx("CAN","username","password", "Canada")
 can
 lc <- lca(can,series="total")
 forecast.lc <- forecast(lc, h=20)
@@ -62,7 +62,7 @@ lines(bms.e0$mean,col=3, lwd=2)
 
 #ex5 
 
-jpn <- hmd.mx("JPN",username,password, "Japan")
+jpn <- hmd.mx("JPN","username","password", "Japan")
 jpn
 jpn.sm <- smooth.demogdata(jpn)
 fdm.female <- fdm(jpn.sm, "female", order=3)
